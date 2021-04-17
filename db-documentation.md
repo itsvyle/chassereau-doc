@@ -28,7 +28,7 @@ An englobing node (named `commands`):
 ### To login
 Add this command inside of `<commands>`:
 ```xml
-<login user_id="your_user_id" password="your_password"/>
+<login user_id="your_user_id" password="your_password" session_duration_minutes="120"/>
 ```
 
 If the credentials are correct, it should return something like this:
