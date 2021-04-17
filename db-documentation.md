@@ -40,6 +40,12 @@ If the credentials are correct, it should return something like this:
 ```
 Note that to use the newly created credentials for the other commands of the request, you need to add the `use="1"` attribute to the `<login>`. You will still need to precise the `app_role` attribute for the `<commands>` tag.
 
+#### Using old session_token
+By specifying the `use_last="1"` attribute in the `<login>` request, the caller can ask for the latest session token to be used, if it is not expired. This means that instead of systematically creating a new token, the server will do the following things :
+* Check if the last session_token is still valid
+* If YES: will return the last token, with all the data as usual
+* If NOT: Will create a new token, and do everything as usual
+
 ### To execute requests
 After that, for each query to the database, add the `session_token` and `app_role` attributes to the englobing node, as so :
 ```xml
