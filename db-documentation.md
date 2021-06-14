@@ -22,7 +22,7 @@ An englobing node (named `commands`):
 <commandname status="0|1" ...other attributes/>
 ```
 
-**Extra information on status**
+### Extra information on status
 The status attribute of each command clearly indicates if the request was entirely fufilled, without any errors, and that the request's results are saved and visible in the databases.
 The status will **not** be 1 if:
 * The request could not be made due to authorization restrictions
