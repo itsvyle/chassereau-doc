@@ -22,6 +22,16 @@ An englobing node (named `commands`):
 <commandname status="0|1" ...other attributes/>
 ```
 
+**Extra information on status**
+The status attribute of each command clearly indicates if the request was entirely fufilled, without any errors, and that the request's results are saved and visible in the databases.
+The status will **not** be 1 if:
+* The request could not be made due to authorization restrictions
+* The SQL command encountered any error, for example if the databases are full
+* The fields are invalid
+* The required XML syntax of the command is not present
+
+**Note that the status of the `<result>` will be 1 only if all the commands have `status="1"`**
+
 ## Authentication
 **Note**: Some commands might not require the caller to be authenticated
 
